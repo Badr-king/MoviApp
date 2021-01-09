@@ -1,24 +1,22 @@
-import logo from './logo.svg';
+import Navvbar from './component/Serchbar/Serchbar'
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
+import {useState} from 'react';
+import Movidata from './Movidata';
+import Movilist from './component/Movilist/Movilist';
+import Addmovi from './component/Addmovi/Addmovi';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  const [movieslist,setMovieslist] = useState(Movidata)
+  const [serchinput, setSerchinput] = useState("")
+  const [rating, setRating] = useState(0)
+console.log(rating)
+     return (
+        <div className="App">
+             <Navvbar setSerchinput={setSerchinput}  setRating={setRating}/>
+             <Movilist movieslist={movieslist} serchinput={serchinput} rating={rating}/>
+             
+        </div>
   );
 }
 

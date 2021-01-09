@@ -1,0 +1,5 @@
+.movilist{
+    display:flex;
+    flex-wrap: wrap;
+    justify-items: left;
+}
