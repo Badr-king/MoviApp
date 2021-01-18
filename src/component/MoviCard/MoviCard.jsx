@@ -1,10 +1,11 @@
 import React from 'react'
 import {Card,Button} from 'react-bootstrap'
  import './MoviCard.css'
+import { Link } from 'react-router-dom'
 export default function Movicard(props) {
     const {movi}=props
     return (
-    
+<Link to={`/movies/${movi.id}`}>
         <Card style={{ width: '18rem',height:"35rem" }} >
             <Card.Img variant="top" src={movi.posterurl} className="movieimg" />
             <Card.Body  className="body">
@@ -21,6 +22,7 @@ export default function Movicard(props) {
             </Card.Footer>
            
         </Card>
+</Link>
     
     )
 }
